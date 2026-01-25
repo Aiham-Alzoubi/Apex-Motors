@@ -1,0 +1,13 @@
+import "../style/about.css";
+
+function About(){
+    return(
+        <h1>
+            
+        </h1>
+    );
+}
+
+export default About;
+
+

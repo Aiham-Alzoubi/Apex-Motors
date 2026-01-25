@@ -1,0 +1,172 @@
+/*  backend page */
+.container{
+    color: white;
+    padding: 0px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* text up */
+.container .textte{
+    text-align: center;
+    background-color: #000000;
+    color: #ddd;
+    margin-top: 10%;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+/* cars network  */
+.sectionall {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+/* ======== تصميم الكرت ======== */
+.cardall {
+  width: 350px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cardall:hover {
+  transform: translateY(-8px);
+  border: 2px solid #ffb400;
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.4);
+}
+
+/* ======== صورة الكرت ======== */
+.imageall {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* ======== النص داخل الكرت ======== */
+.contentall {
+  padding: 20px;
+  text-align: center;
+}
+
+.titleall {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.subtitleall {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ======== الأسعار ======== */
+.pricesall {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-boxall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.price-boxall:hover {
+  background: #ffe8b0;
+}
+
+.labelall {
+  font-weight: bold;
+  color: #333;
+}
+
+.valueall {
+  color: #ffb400;
+  font-weight: bold;
+}
+
+/* ======== الأزرار ======== */
+.butt {
+  background: #ffb400;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.butt:hover {
+  background: #111;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ======== التصميم المتجاوب ======== */
+@media (max-width: 1024px) {
+  .text2 {
+    font-size: 2rem;
+  }
+
+  .cardall {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imagea {
+    height: 300px;
+  }
+
+  .tex {
+    top: 140px;
+  }
+
+  .text1 {
+    font-size: 0.9rem;
+  }
+
+  .text2 {
+    font-size: 1.8rem;
+  }
+
+  .sectionall {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+  }
+
+  .cardall {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text2 {
+    font-size: 1.5rem;
+  }
+
+  .butt {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+

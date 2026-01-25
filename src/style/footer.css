@@ -1,0 +1,33 @@
+.footer {
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    color: #e2e8f0;
+    text-align: center;
+    padding: 25px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.footer h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #cbd5e1;
+}
+
+.footer h1:hover {
+  color: #38bdf8;
+  transition: color 0.3s ease;
+}
+
+/*  screen phone  */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 20px 0;
+  }
+}
