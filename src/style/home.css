@@ -1,128 +1,243 @@
-.home {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Galary */
-.image1 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-bottom: 2px solid #ffb400;
+/* ================= HERO ================= */
+
+.home{
+  background: url("https://cdn.mkrentacar.com/wp-content/uploads/2025/03/ferrari-scaled.jpg")
+    center/cover no-repeat;
+  height: 60vh;
+  position:relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.image1{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Overlay */
+.home::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.7)
+  );
+  z-index:1;
+}
+
+/* Hero Content */
+.mune{
+  position:absolute;
+  bottom:12%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  text-align:center;
+  color:#fff;
+  width:90%;
+  animation:fadeUp 1s ease forwards;
+}
+
+.text{
+  font-size:2.7rem;
+  margin-bottom:20px;
+}
+
+/* Icons */
+.items{
+  list-style:none;
+}
+
+.item{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.icon{
+  background:rgba(255,255,255,0.15);
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:0.95rem;
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(5px);
+}
+
+/* Buttons */
+.actions{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 28px;
+  border:none;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.primary{
+  background:#f7ff00;
+  color:#000;
+  border-radius:30px;
 
 }
 
-
-.home::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.6)
-    );
-    z-index: 1;
+.secondary{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
 }
 
-/* text */
-.mune {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 5%;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    width: 90%;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-
-    /*start animation*/
-    opacity: 0;
-    transform: translate(-50%, 30px);
-    animation: fadeUp 1.2s ease-out 0.3s forwards;
+.primary:hover{
+  background:#f6ff005e;
 }
 
-.text {
-    font-size: 2.3rem;
-    margin-bottom: 15px;
-    font-weight: 600;
+.secondary:hover{
+  background:#ffffff76;
+  color:#000;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  padding:80px 8%;
+  text-align:center;
+}
+
+.section h2{
+  font-size:2.2rem;
+  margin-bottom:20px;
+}
+
+.section p{
+  color:#555;
+  max-width:600px;
+  margin:auto;
+  font-size:1.05rem;
+}
+
+/* ================= SERVICES ================= */
+
+.service-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.service-card{
+  background:#0f172a;
+  color:#fff;
+  padding:40px 20px;
+  border-radius:15px;
+  font-size:1.2rem;
+  transition:0.4s;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ================= CARS ================= */
+
+.cars{
+  background:#f8f8f8;
+}
+
+.cars h2{
+  margin-bottom:40px;
+}
+
+.car-card{
+  display:inline-block;
+  width:280px;
+  margin:15px;
+  background:#111;
+  border-radius:18px;
+  overflow:hidden;
+  color:#fff;
+  transition:0.4s;
+  cursor:pointer;
+  animation: bounce 2s infinite;
+}
+
+.car-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.car-card h3{
+  padding:15px;
+}
+
+.car-card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translate(-50%,40px);
+  }
+  to{
+    opacity:1;
+    transform:translate(-50%,0);
+  }
 }
 
 
-.items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  40% { transform: translateY(-20px);}
+  60% { transform: translateY(-10px);}
 }
 
-.item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+  .text{
+    font-size:1.8rem;
   }
 
-.icon {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 1rem;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    /*  */
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-}
-
-.icon:nth-child(1) { animation-delay: 0.6s; }
-.icon:nth-child(2) { animation-delay: 0.8s; }
-.icon:nth-child(3) { animation-delay: 1s; }
-.icon:nth-child(4) { animation-delay: 1.2s; }
-.icon:nth-child(5) { animation-delay: 1.4s; }
-
-
-
-/*animation*/
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 40px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* phone */
-@media (max-width: 768px) {
-  .text {
-    font-size: 1.7rem;
+  .icon{
+    font-size:0.85rem;
+    padding:6px 12px;
   }
 
-  .icon {
-    font-size: 0.9rem;
-    padding: 5px 10px;
+  .btn{
+    padding:10px 22px;
+    font-size:0.9rem;
+  }
+
+  .section{
+    padding:60px 6%;
   }
 }

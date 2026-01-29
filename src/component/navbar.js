@@ -47,6 +47,8 @@ function Navbar() {
         <li><Link to="/Contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
       </ul>
 
+      
+
       <div className="nav-buttons">
         <button className="btn login">Log in</button>
         <button className="btn signup">Sign up</button>
