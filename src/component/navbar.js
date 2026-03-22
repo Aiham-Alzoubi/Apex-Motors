@@ -1,59 +1,117 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../style/navbar.css";
-import { Link } from "react-router-dom";
+
+const brands = [
+  { name: "Ferrari",     slug: "ferrari" },
+  { name: "Lamborghini", slug: "lamborghini" },
+  { name: "Porsche",     slug: "porsche" },
+  { name: "McLaren",     slug: "mclaren" },
+  { name: "Rolls-Royce", slug: "rolls-royce" },
+  { name: "BMW",         slug: "bmw" },
+  { name: "Mercedes",    slug: "mercedes" },
+];
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOpen,        setIsOpen]        = useState(false);
+  const [isDropdown,    setIsDropdown]    = useState(false);
+  const dropdownRef = useRef(null);
+  const location    = useLocation();
+
+  // Close everything on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setIsDropdown(false);
+  }, [location]);
+
+  // Close dropdown on outside click (mobile fix)
+  useEffect(() => {
+    const handler = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const closeAll = () => {
+    setIsOpen(false);
+    setIsDropdown(false);
+  };
 
   return (
     <nav className="navbar">
-      <h2 className="logo">RENT A CAR</h2>
 
-      {/* ☰ أيقونة الموبايل */}
-      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </div>
+      {/* Logo */}
+      <Link to="/" className="navbar-logo" onClick={closeAll}>
+        <svg width="34" height="34" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#c9a84c"/>
+          <text x="16" y="22" textAnchor="middle"
+            fill="#000" fontSize="11" fontWeight="800"
+            fontFamily="Segoe UI, system-ui, sans-serif">AM</text>
+        </svg>
+        <span>Apex Motors</span>
+      </Link>
 
-      {/* روابط القائمة */}
-      <ul className={isOpen ? "nav-links open" : "nav-links"}>
-        <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-        <li><Link to="/About" onClick={() => setIsOpen(false)}>About</Link></li>
-        <li><Link to="/Allcars" onClick={() => setIsOpen(false)}>All Cars</Link></li>
-        <li><Link to="/Rental-Prices" onClick={() => setIsOpen(false)}>Rental-Prices</Link></li>
+      {/* Mobile toggle */}
+      <button
+        className="menu-icon"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+        aria-expanded={isOpen}
+      >
+        {isOpen ? "✕" : "☰"}
+      </button>
 
-        {/* قائمة منسدلة */}
-        <li
-          className="dropdown"
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
-        >
-          <Link to="/Brand" className="dropdown-toggle">Rent by Brand ▾</Link>
+      {/* Links */}
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li><Link to="/"        onClick={closeAll}>Home</Link></li>
+        <li><Link to="/about"   onClick={closeAll}>About</Link></li>
+        <li><Link to="/all-cars" onClick={closeAll}>All Cars</Link></li>
 
-          {isDropdownOpen && (
-            <ul className="dropdown-menu">
-              <li><Link to="/Ferrari">Ferrari</Link></li>
-              <li><Link to="/Lamborghini">Lamborghini</Link></li>
-              <li><Link to="/Porsche">Porsche</Link></li>
-              <li><Link to="/McLaren">McLaren</Link></li>
-              <li><Link to="/RollsRoyce">Rolls-Royce</Link></li>
-              <li><Link to="/BMW">BMW</Link></li>
-              <li><Link to="/Mercedes">Mercedes</Link></li>
-            </ul>
-          )}
+        {/* Dropdown */}
+        <li className="dropdown" ref={dropdownRef}>
+          <button
+            className="dropdown-toggle"
+            onClick={() => setIsDropdown(!isDropdown)}
+            aria-expanded={isDropdown}
+          >
+            Brand <span className={`chevron ${isDropdown ? "up" : ""}`}>▾</span>
+          </button>
+
+          <ul className={`dropdown-menu ${isDropdown ? "open" : ""}`}>
+            <li className="dropdown-header">
+              <Link to="/brand" onClick={closeAll}>View All Brands →</Link>
+            </li>
+            {brands.map((brand) => (
+              <li key={brand.slug}>
+                <Link to={`/brand/${brand.slug}`} onClick={closeAll}>
+                  {brand.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </li>
 
-        <li><Link to="/Services" onClick={() => setIsOpen(false)}>Services</Link></li>
-        <li><Link to="/Contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+        <li><Link to="/services" onClick={closeAll}>Services</Link></li>
+        <li><Link to="/contact"  onClick={closeAll}>Contact</Link></li>
+
+        {/* Buttons inside nav on mobile */}
+        <li className="nav-buttons-mobile">
+          <button className="btn btn-login">Log in</button>
+          <button className="btn btn-signup">Sign up</button>
+        </li>
       </ul>
 
-      
-
+      {/* Buttons — desktop */}
       <div className="nav-buttons">
-        <button className="btn login">Log in</button>
-        <button className="btn signup">Sign up</button>
+        <button className="btn btn-login">Log in</button>
+        <button className="btn btn-signup">Sign up</button>
       </div>
+
     </nav>
   );
 }
+
 export default Navbar;

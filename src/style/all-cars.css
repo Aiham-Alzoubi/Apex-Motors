@@ -1,188 +1,297 @@
-/* ======== الصورة العلوية ======== */
-.imagea {
+/* ================================
+   ALL CARS PAGE
+================================ */
+
+.ac-page {
+  background: #080808;
+  color: #fff;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ── HERO ── */
+.ac-hero {
+  position: relative;
+  height: 52vh;
+  min-height: 340px;
+  background: url("https://cdn.mkrentacar.com/wp-content/uploads/2025/07/IMG_4332-scaled.jpg")
+    center / cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ac-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8,8,8,1)    0%,
+    rgba(8,8,8,0.55) 55%,
+    rgba(8,8,8,0.2)  100%
+  );
+}
+
+.ac-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: acFadeUp 0.8s ease both;
+}
+
+.ac-breadcrumb {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ac-breadcrumb a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ac-breadcrumb a:hover { color: #fff; }
+
+.ac-hero-content h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.ac-hero-content p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* ── CONTROLS ── */
+.ac-controls {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 6% 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ac-search {
+  flex: 1;
+  min-width: 200px;
+  max-width: 340px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 30px;
+  padding: 11px 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.ac-search::placeholder { color: #555; }
+.ac-search:focus { border-color: #c9a84c; }
+
+.ac-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ac-filter-btn {
+  padding: 9px 22px;
+  border-radius: 30px;
+  border: 1px solid #2a2a2a;
+  background: #111;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.ac-filter-btn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.ac-filter-btn.active {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #000;
+  font-weight: 700;
+}
+
+/* ── GRID ── */
+.ac-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 6% 100px;
+}
+
+.ac-empty {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  padding: 60px 0;
+}
+
+.ac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+/* ── CARD ── */
+.ac-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ac-card:hover {
+  transform: translateY(-6px);
+  border-color: #c9a84c;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+/* Image */
+.ac-card-img-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.ac-card-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative;
-  border-bottom: 3px solid #111111;
+  transition: transform 0.45s ease;
 }
 
-/* ======== النص فوق الصورة ======== */
-.tex {
+.ac-card:hover .ac-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+.ac-badge {
   position: absolute;
-  top: 180px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  top: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  color: #c9a84c;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
 }
 
-.text1 {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translate(-50%, 30px);
-  animation: fadeUp 1.2s ease-out 0.3s forwards;
+/* Body */
+.ac-card-body {
+  padding: 22px 22px 24px;
 }
 
-.text2 {
-  font-size: 2.5rem;
-  margin-top: 10px;
+.ac-card-name {
+  font-size: 1.2rem;
   font-weight: 700;
-  opacity: 0;
-  transform: translate(-50%, 30px);
-  animation: fadeUp 1.2s ease-out 0.3s forwards;
-}
-
-/* ======== قسم الكروت ======== */
-.sectionall {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  padding: 60px 20px;
-  background-color: #f8f9fa;
-}
-
-/* ======== تصميم الكرت ======== */
-.cardall {
-  width: 350px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.cardall:hover {
-  transform: translateY(-8px);
-  border: 2px solid #ffb400;
-  box-shadow: 0 0 20px rgba(255, 180, 0, 0.4);
-}
-
-/* ======== صورة الكرت ======== */
-.imageall {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-/* ======== النص داخل الكرت ======== */
-.contentall {
-  padding: 20px;
-  text-align: center;
-}
-
-.titleall {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #222;
   margin-bottom: 5px;
 }
 
-.subtitleall {
-  font-size: 0.9rem;
+.ac-card-note {
+  font-size: 0.75rem;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
 }
 
-/* ======== الأسعار ======== */
-.pricesall {
+/* Prices */
+.ac-prices {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.price-boxall {
+.ac-price-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #f2f2f2;
-  padding: 10px 15px;
+  justify-content: space-between;
+  background: #161616;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+
+.ac-price-row:hover { border-color: #333; }
+
+.ac-price-label {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 60px;
+}
+
+.ac-price-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #c9a84c;
+  flex: 1;
+  text-align: center;
+}
+
+/* Buttons */
+.ac-btn {
+  padding: 7px 16px;
   border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.price-boxall:hover {
-  background: #ffe8b0;
-}
-
-.labelall {
-  font-weight: bold;
-  color: #333;
-}
-
-.valueall {
-  color: #ffb400;
-  font-weight: bold;
-}
-
-/* ======== الأزرار ======== */
-.butt {
-  background: #ffb400;
-  border: none;
-  padding: 7px 14px;
-  border-radius: 8px;
-  color: #111;
-  font-weight: bold;
+  font-size: 0.78rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
 }
 
-.butt:hover {
-  background: #111;
-  color: #fff;
-  transform: scale(1.05);
+.ac-btn:hover { opacity: 0.85; transform: scale(1.03); }
+
+.ac-btn-wa   { background: #25d366; color: #000; }
+.ac-btn-call { background: #0066cc; color: #fff; }
+.ac-btn-book { background: #c9a84c; color: #000; }
+
+/* ── ANIMATION ── */
+@keyframes acFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ======== التصميم المتجاوب ======== */
-@media (max-width: 1024px) {
-  .text2 {
-    font-size: 2rem;
-  }
-
-  .cardall {
-    width: 300px;
-  }
-}
-
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .imagea {
-    height: 300px;
-  }
+  .ac-hero { background-attachment: scroll; }
 
-  .tex {
-    top: 140px;
-  }
-
-  .text1 {
-    font-size: 0.9rem;
-  }
-
-  .text2 {
-    font-size: 1.8rem;
-  }
-
-  .sectionall {
+  .ac-controls {
     flex-direction: column;
-    align-items: center;
-    padding: 40px 10px;
+    align-items: stretch;
   }
 
-  .cardall {
-    width: 90%;
-  }
-}
+  .ac-search { max-width: 100%; }
 
-@media (max-width: 480px) {
-  .text2 {
-    font-size: 1.5rem;
-  }
-
-  .butt {
-    padding: 6px 10px;
-    font-size: 0.85rem;
+  .ac-grid {
+    grid-template-columns: 1fr;
   }
 }
