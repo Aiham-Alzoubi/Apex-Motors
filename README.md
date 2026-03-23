@@ -1,9 +1,9 @@
-#🏎️ Apex Motors — Luxury Car Rental Dubai
+🏎️ Apex Motors — Luxury Car Rental Dubai
 A full-stack React SPA for a luxury & sports car rental company based in Dubai. Built with performance, clean architecture, and production-ready code in mind.
 
-https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react
-https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=react-router
-https://img.shields.io/badge/CSS3-Custom-1572B6?style=flat&logo=css3
+1- https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react
+2- https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=react-router
+3- https://img.shields.io/badge/CSS3-Custom-1572B6?style=flat&logo=css3
 
 ##📸 Preview
 
