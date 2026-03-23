@@ -1,3 +1,67 @@
+#🏎️ Apex Motors — Luxury Car Rental Dubai
+A full-stack React SPA for a luxury & sports car rental company based in Dubai. Built with performance, clean architecture, and production-ready code in mind.
+
+https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react
+https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=react-router
+https://img.shields.io/badge/CSS3-Custom-1572B6?style=flat&logo=css3
+
+##📸 Preview
+
+Luxury dark theme · Gold accents · Fully responsive · Smooth animations
+
+
+##🚀 Getting Started
+Prerequisites
+
+Node.js v18+
+npm or yarn
+
+##Installation
+# Clone the repo
+git clone https://github.com/your-username/apex-motors.git
+
+# Navigate to project
+cd apex-motors
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+Open http://localhost:3000 in your browser.
+
+
+##Build for Production
+npm run build
+
+
+##📁 Project Structure
+src/
+├── component/
+│   ├── Navbar.jsx          # Responsive navbar with brand dropdown
+│   ├── Footer.jsx          # Multi-column footer with contact strip
+│   ├── Home.jsx            # Landing page
+│   ├── About.jsx           # About page with stats & mission
+│   ├── AllCars.jsx         # Fleet page with search & filter
+│   ├── Services.jsx        # Services & how-it-works
+│   ├── Contact.jsx         # Contact form with Google Maps
+│   ├── Brand.jsx           # All brands overview page
+
+├── style/
+│   ├── navbar.css
+│   ├── footer.css
+│   ├── home.css
+│   ├── about.css
+│   ├── all-cars.css
+│   ├── services.css
+│   ├── contact.css
+│   ├── brand.css
+├── App.js                  # Route definitions
+└── index.js
+public/
+└── logo.svg                # Apex Motors SVG logo
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +132,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+📄 License
+This project is for portfolio and demonstration purposes.
+
+👤 Author
+Ayham Al-Zoubi
+
+GitHub: @ayhamalzoubi:(https://github.com/ayhamalzoubi)
+Location: Jordan 🇯🇴
+
+
+Built as a full-stack portfolio project demonstrating React architecture, dynamic routing, and production-grade UI design.
