@@ -1,26 +1,26 @@
-🏎️ Apex Motors — Luxury Car Rental Dubai
+Apex Motors — Luxury Car Rental Dubai
 A full-stack React SPA for a luxury & sports car rental company based in Dubai. Built with performance, clean architecture, and production-ready code in mind.
 
 1- https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react
 2- https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=react-router
 3- https://img.shields.io/badge/CSS3-Custom-1572B6?style=flat&logo=css3
 
-##📸 Preview
+📸 Preview
 
 Luxury dark theme · Gold accents · Fully responsive · Smooth animations
 
 
-##🚀 Getting Started
+🚀 Getting Started
 Prerequisites
 
 Node.js v18+
 npm or yarn
 
-##Installation
-# Clone the repo
+Installation
+ Clone the repo
 git clone https://github.com/your-username/apex-motors.git
 
-# Navigate to project
+ Navigate to project
 cd apex-motors
 
 # Install dependencies
