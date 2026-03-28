@@ -51,22 +51,39 @@ This project focuses on building a **real-world UI**, improving **React structur
 Apex-Motors
 
 │── public
+
 │── src
+
 │ ├── component
+
 │ │ ├── Navbar.js
+
 │ │ ├── Home.js
+
 │ │ ├── Brand.js
+
 │ │ ├── Services.js
+
 │ │ ├── Contact.js
+
 │ │
+
 │ ├── style
+
 │ │ ├── navbar.css
+
 │ │ ├── home.css
+
 │ │
+
 │ ├── App.js
+
 │ ├── index.js
+
 │
+
 │── package.json
+
 │── README.md
 
 
