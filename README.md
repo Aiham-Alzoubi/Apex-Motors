@@ -140,9 +140,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 This project is for portfolio and demonstration purposes.
 
 👤 Author
-Ayham Al-Zoubi
+Aiham Al-Zoubi
 
-GitHub: @ayhamalzoubi:(https://github.com/ayhamalzoubi)
+GitHub: @aihamalzoubi:(https://github.com/aihamalzoubi)
 Location: Jordan 🇯🇴
 
 
