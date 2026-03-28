@@ -30,7 +30,7 @@ npm install
 
  Start development server
 npm start
-Open http://localhost:3000 in your browser.
+Open https://apex-motors-omega.vercel.app/ in your browser.
 
 
 Build for Production
